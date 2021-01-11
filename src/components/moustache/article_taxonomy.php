@@ -1,6 +1,6 @@
 <?php
 
-namespace mf\moustache;
+namespace andyp\pagebuilder\flickity\components\moustache;
 
 class article_taxonomy {
 

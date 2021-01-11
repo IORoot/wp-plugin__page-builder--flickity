@@ -1,8 +1,8 @@
 <?php
 
-namespace mf\moustache;
+namespace andyp\pagebuilder\flickity\components\moustache;
 
-class ig_media_type { 
+class youtube_channel_link {
 
 
     public $match;
@@ -33,22 +33,13 @@ class ig_media_type {
 
 
 
+    
     public function match()
     {
-        $cell = $this->data['post'];
-
-        $type = get_post_meta($cell->ID, 'type', true); // GraphVideo = videos / GraphSidecar = carousel / GraphImage = images
-
-        $output = 'mdi-camera';
-
-        if ($type == 'GraphVideo') {
-            $output = 'mdi-play-circle';
-        }
-        if ($type == 'GraphSidecar') {
-            $output = 'mdi-apps';
-        }
-
-        $this->result =  $output;
+        $this->result = 'https://youtube.com/channel/'. $this->data["meta"]["channelId"][0];
+        return;
     }
+
+    
 
 }

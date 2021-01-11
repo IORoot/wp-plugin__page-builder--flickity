@@ -1,8 +1,8 @@
 <?php
 
-namespace mf\moustache;
+namespace andyp\pagebuilder\flickity\components\moustache;
 
-class image_url {
+class youtube_playlist_link {
 
 
     public $match;
@@ -31,15 +31,10 @@ class image_url {
         return str_replace('{{'.$this->match.'}}', $this->result, $this->theme);
     }
 
-
-
     
     public function match()
     {
-        $post = $this->data['post'];
-
-        $this->result = get_the_post_thumbnail_url($post, 'full');
-
+        $this->result = 'https://youtube.com/playlist?list='. $this->data["meta"]["playlistId"][0];
         return;
     }
 

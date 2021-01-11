@@ -3,11 +3,11 @@
 $tablet: 1023px;
 $mobile: 767px;
 
-.andyp-grid {
-
+.flickity {
+    
     position: relative;
     
-    &__header {
+    .header {
         color: #757575;
 
         &-tax {
@@ -16,13 +16,9 @@ $mobile: 767px;
             margin-left: 10px;
         }
 
-        .mdi {
-            width: 29px;
-            height: 29px;
-        }
     }
 
-    &__main-carousel {  
+    .main-carousel {  
         height: 203px;
     }
 
@@ -30,7 +26,7 @@ $mobile: 767px;
         position: relative;
     }
 
-    &__last-ran {
+    .last-ran {
         position: absolute;
         top: 14px;
         right: 320px;
@@ -39,7 +35,7 @@ $mobile: 767px;
     }
 
     // Each cell item
-    &__cell {
+    .cell {
         display: initial;
         position: relative;
         width: 20%;
@@ -204,14 +200,13 @@ $mobile: 767px;
         }
     }
 
-}
+    
 
-// Change widths on tablet.
-@media (max-width: $tablet) {
-    .andyp-grid {  
+    // Change widths on tablet.
+    @media (max-width: $tablet) {
 
         // Make the grid only 2xCells wide
-        &__cell {
+        .cell {
             width: 50% !important;
 
             // Move the date to the top of the cell.
@@ -222,7 +217,12 @@ $mobile: 767px;
             }
         }  
     }
+
+
 }
+
+
+
 
 // Change widths on tablet.
 @media (max-width: $mobile) {

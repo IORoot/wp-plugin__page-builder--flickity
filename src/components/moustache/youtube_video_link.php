@@ -1,8 +1,8 @@
 <?php
 
-namespace mf\moustache;
+namespace andyp\pagebuilder\flickity\components\moustache;
 
-class article_media_type {
+class youtube_video_link {
 
 
     public $match;
@@ -33,17 +33,13 @@ class article_media_type {
 
 
 
+    
     public function match()
     {
-        $cell = $this->data['post'];
-
-        if (get_post_meta($cell, 'videoId', true) == '') {
-            $output = 'mdi-book-open';
-        }
-
-        $output = 'mdi-play-circle-outline';
-
-        $this->result =  $output;
+        $this->result = 'http://youtube.com/watch?v='. $this->data["meta"]["videoId"][0];
+        return;
     }
+
+    
 
 }

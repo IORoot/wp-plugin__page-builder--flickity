@@ -1,8 +1,8 @@
 <?php
 
-namespace mf\moustache;
+namespace andyp\pagebuilder\flickity\components\moustache;
 
-class youtube_playlist_link {
+class itunes_link {
 
 
     public $match;
@@ -31,10 +31,13 @@ class youtube_playlist_link {
         return str_replace('{{'.$this->match.'}}', $this->result, $this->theme);
     }
 
+
+
     
     public function match()
     {
-        $this->result = 'https://youtube.com/playlist?list='. $this->data["meta"]["playlistId"][0];
+        $this->result = $this->data["meta"]["audioLink"][0];
+
         return;
     }
 

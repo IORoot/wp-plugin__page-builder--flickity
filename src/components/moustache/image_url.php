@@ -1,8 +1,8 @@
 <?php
 
-namespace mf\moustache;
+namespace andyp\pagebuilder\flickity\components\moustache;
 
-class time_ago {
+class image_url {
 
 
     public $match;
@@ -38,7 +38,7 @@ class time_ago {
     {
         $post = $this->data['post'];
 
-        $this->result = human_time_diff( get_the_time( 'U', $post ), current_time( 'timestamp' ) );
+        $this->result = get_the_post_thumbnail_url($post, 'full');
 
         return;
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace mf\moustache;
+namespace andyp\pagebuilder\flickity\components\moustache;
 
-class itunes_link {
+class article_media_type {
 
 
     public $match;
@@ -33,14 +33,17 @@ class itunes_link {
 
 
 
-    
     public function match()
     {
-        $this->result = $this->data["meta"]["audioLink"][0];
+        $cell = $this->data['post'];
 
-        return;
+        if (get_post_meta($cell, 'videoId', true) == '') {
+            $output = 'mdi-book-open';
+        }
+
+        $output = 'mdi-play-circle-outline';
+
+        $this->result =  $output;
     }
-
-    
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace mf;
+namespace andyp\pagebuilder\flickity\components;
 
 class theme
 {
@@ -32,6 +32,8 @@ class theme
 
     public function convert_moustaches()
     {
+        if (empty($this->theme)){ return; }
+
         preg_match_all('/\{\{(\S*?)\}\}/', $this->theme, $matches);
         
         foreach ($matches[1] as $match) {
@@ -91,8 +93,8 @@ class theme
 
             if ($moustache != $match){ continue; }
 
-            $instance = '\\mf\moustache\\'.$moustache;
-            
+            $instance = '\\andyp\\pagebuilder\\flickity\\components\\moustache\\'. $moustache;
+
             $obj = new $instance;
             $obj->set_match($match);
             $obj->set_theme($this->theme);
@@ -107,7 +109,7 @@ class theme
 
     public function get_moustache_list()
     {
-        $files = scandir(__DIR__ . '/moustaches');
+        $files = scandir(__DIR__ . '/moustache');
 
         foreach ($files as $file) {
             $file = str_replace('.php', '', $file);

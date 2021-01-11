@@ -1,6 +1,6 @@
 <?php
 
-namespace mf\moustache;
+namespace andyp\pagebuilder\flickity\components\moustache;
 
 
 // ┌─────────────────────────────────────────────────────────────────────────┐
@@ -8,7 +8,7 @@ namespace mf\moustache;
 // │          USED FOR BOTH YOUTUBE AND INSTAGRAM MIXED RESULTS              │
 // │                                                                         │
 // └─────────────────────────────────────────────────────────────────────────┘
-class mixed_username {
+class mixed_source {
 
 
     public $match;
@@ -43,10 +43,18 @@ class mixed_username {
     {
         $cell = $this->data['post'];
 
-        $output = get_post_meta($cell->ID, 'username', true); // If there IS a 'username' field, then it's an instagram post.
+        // default
+        $output = 'mdi-youtube-tv';
+
+        $ig = get_post_meta($cell->ID, 'username', true); // If there IS a 'username' field, then it's an instagram post.
+        $it = get_post_meta($cell->ID, 'audioLink', true); // If there IS a 'audioLink' field, then it's an podcast post.
         
-        if (!$output) {
-            $output = get_post_meta($cell->ID, 'channelTitle', true); // If there IS a 'channelTitle' field, then it's an youtube post.
+        if ($ig) {
+            $output = 'mdi-instagram';
+        }
+        
+        if ($it) {
+            $output = 'mdi-google-podcast';
         }
 
         $this->result =  $output;

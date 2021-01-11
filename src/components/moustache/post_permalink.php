@@ -1,8 +1,8 @@
 <?php
 
-namespace mf\moustache;
+namespace andyp\pagebuilder\flickity\components\moustache;
 
-class youtube_video_link {
+class post_permalink {
 
 
     public $match;
@@ -36,7 +36,10 @@ class youtube_video_link {
     
     public function match()
     {
-        $this->result = 'http://youtube.com/watch?v='. $this->data["meta"]["videoId"][0];
+        $post = $this->data['post'];
+
+        $this->result = esc_url( get_post_permalink($post));
+
         return;
     }
 

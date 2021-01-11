@@ -1,8 +1,8 @@
 <?php
 
-namespace mf\moustache;
+namespace andyp\pagebuilder\flickity\components\moustache;
 
-class post_permalink {
+class time_ago {
 
 
     public $match;
@@ -38,7 +38,7 @@ class post_permalink {
     {
         $post = $this->data['post'];
 
-        $this->result = esc_url( get_post_permalink($post));
+        $this->result = human_time_diff( get_the_time( 'U', $post ), current_time( 'timestamp' ) );
 
         return;
     }

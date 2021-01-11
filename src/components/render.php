@@ -1,6 +1,6 @@
 <?php
 
-namespace mf;
+namespace andyp\pagebuilder\flickity\components;
 
 class render
 {
@@ -20,26 +20,7 @@ class render
      */
     public function open_wrapper()
     {
-        return '<div class="andyp-grid '.  $this->options->shortcode["mf_shortcode_header"]["mf_shortcode_slug"] .'">';
-    }
-
-    /**
-     * open_form
-     *
-     * @return void
-     */
-    public function open_form()
-    {
-        if (current_user_can('edit_posts')) {
-
-            $url = '/pulse';
-            if (isset($_SERVER['REDIRECT_URL'])) {
-                $url = $_SERVER['REDIRECT_URL'];
-            }
-
-            $slug = $this->options->shortcode["mf_shortcode_header"]["mf_shortcode_slug"];
-            return '<form id="'.$slug.'" name="'.$slug.'" method="post" action="'.$url.'">';
-        }
+        return '<div class="flickity"><div class="'. sanitize_title($this->options["title"]) .' '.$this->options['classes'].'">';
     }
 
     
@@ -50,62 +31,9 @@ class render
      */
     public function title()
     {
-        if (isset($this->options->shortcode["mf_shortcode_header"]["mf_shortcode_title"])) {
-            return '<h3 id="'.$this->options->shortcode["mf_shortcode_header"]["mf_shortcode_slug"].'" class="andyp-grid__header">'. $this->options->shortcode["mf_shortcode_header"]["mf_shortcode_title"] . '</h3>';
+        if (isset($this->options["title"])) {
+            return '<div class="title">'. $this->options["title"] . '</div>';
         }
-    }
-
-    /**
-     * last ran time
-     *
-     * @return void
-     */
-    public function last_ran($results)
-    {
-
-        if (!$results[0]){
-            return;
-        }
-
-        if (!isset($results[0]['meta']['scrapeId'][0]))
-        {
-            return;
-        }
-
-        $output = '<p class="andyp-grid__last-ran">';
-            $output .=  do_shortcode('[andyp_scrape_date scrape_id="'.$results[0]['meta']['scrapeId'][0].'" fmt="ago"]');
-        $output .= '</p>';
-
-        return $output;
-    }
-
-    
-    /**
-     * delete_button
-     *
-     * @return void
-     */
-    public function delete_button()
-    {
-        $delete_button = '';
-        if (current_user_can('edit_posts')) {
-            $delete_button = '<input class="andyp-grid__cell-button--delete" type="submit" name="command" value="Delete"/> ';
-        }
-        return $delete_button;
-    }
-
-    /**
-     * highlight_button
-     *
-     * @return void
-     */
-    public function highlight_button()
-    {
-        $highlight_button = '';
-        if (current_user_can('edit_posts')) {
-            $highlight_button = '<input class="andyp-grid__cell-button--highlight" type="submit" name="command" value="Highlight"/> ';
-        }
-        return $highlight_button;
     }
 
 
@@ -118,11 +46,11 @@ class render
     {
         $flickity = '';
 
-        if (isset($this->options->shortcode["mf_arguments"])) {
-            $flickity = 'data-flickity=\' '.$this->options->shortcode["mf_arguments"].' \'';
+        if (isset($this->options["flickity_arguments"])) {
+            $flickity = 'data-flickity=\' '.$this->options["flickity_arguments"].' \'';
         }
 
-        return '<div class="andyp-grid__main-carousel main-carousel" '.$flickity.'>';
+        return '<div class="main-carousel" '.$flickity.'>';
     }
 
 
@@ -136,7 +64,7 @@ class render
     {
         // Are we going to stack the results vertically?
         if ($this->is_vertical_stack_on()) {
-            return '<div class="andyp-grid__cell vertical-stack carousel-cell">';
+            return '<div class="vertical-stack carousel-cell">';
         }
     }
 
@@ -148,7 +76,7 @@ class render
      */
     public function open_cell()
     {
-        return '<div class="andyp-grid__cell carousel-cell">';
+        return '<div class="carousel-cell">';
     }
 
     /**
@@ -173,8 +101,8 @@ class render
     {
         // add a wrapper around every X items.
         if ($this->is_vertical_stack_on()) {
-            if ($col % $this->options->shortcode["mf_vertical_stacking"] == 0) {
-                return '</div><div class="andyp-grid__cell vertical-stack carousel-cell">';
+            if ($col % $this->options["vertical_stack"] == 0) {
+                return '</div><div class="vertical-stack carousel-cell">';
             }
         }
     }
@@ -215,20 +143,9 @@ class render
      */
     public function close_wrapper()
     {
-        return '</div>';
+        return '</div></div>';
     }
 
-    /**
-     * close_form
-     *
-     * @return void
-     */
-    public function close_form()
-    {
-        if (current_user_can('edit_posts')) {
-            return '</form>';
-        }
-    }
 
     /**
      * is_vertical_stack_on
@@ -237,7 +154,7 @@ class render
      */
     public function is_vertical_stack_on()
     {
-        if (isset($this->options->shortcode["mf_vertical_stacking"]) && $this->options->shortcode["mf_vertical_stacking"] != 0) {
+        if (isset($this->options["vertical_stack"]) && $this->options["vertical_stack"] != 0) {
             return true;
         }
 
