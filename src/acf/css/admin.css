@@ -1,0 +1,56 @@
+
+    .acf-field-5eb8f4619c286 .acf-field-5eb8f9d429015  {
+        padding: 0px;
+        border: 0px;
+        background: transparent;
+    }
+
+    .acf-field-5eb8f4619c286 .acf-field-5eb8f9d429015 .acf-input > .acf-fields {
+        border: 0px;
+        background: transparent;
+    }
+
+    .-collapsed .acf-field-5eb8f9d429015 .acf-label {
+        display: none;
+    }
+
+
+/*  ┌─────────────────────────────────────────────────────────────────────────┐
+    │                                                                         │░
+    │                                                                         │░
+    │                                 TABLES                                  │░
+    │                                                                         │░
+    │                                                                         │░
+    └─────────────────────────────────────────────────────────────────────────┘░
+     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ */
+
+
+.andyp_page_gridshortcodes .mdi {
+    vertical-align: initial !important;
+}
+
+.andyp_page_gridshortcodes table { 
+    border-collapse: separate;
+    border-spacing: 0 40px;
+    border: 0px;
+    background: transparent;
+}    
+.andyp_page_gridshortcodes table>tbody>tr { 
+    border: 0px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+}    
+.andyp_page_gridshortcodes table>tbody>tr>td { 
+    border:0px;
+    border-top: 1px solid rgba(230,230,230,0.5);
+}
+
+.acf-table>tbody>tr:nth-child(odd) td {background: #fafafa } 
+.acf-table>tbody>tr:nth-child(even) td {background: #F2F9FF } 
+
+
+.-collapsed .-collapsed-target {
+    width: 100% !important;
+}
+.-collapsed .-collapsed-target input {
+    text-align: center;
+}

@@ -1,0 +1,277 @@
+[
+    {
+        "key": "group_5e675b2ca4a55",
+        "title": "Metafizzy Flickity Shortcodes",
+        "fields": [
+            {
+                "key": "field_5e6a71020553d",
+                "label": "Help",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "message": "<a href=\"https:\/\/wordpress.stackexchange.com\/questions\/193110\/wordpress-get-posts-by-category\">Return CPT for specific taxonomies<\/a><br\/>\r\n<h4>Reference Links<\/h4>\r\n<a href=\"https:\/\/developer.wordpress.org\/reference\/classes\/wp_query\/parse_query\/\">Post Query Terms<\/a><br\/>\r\n<a href=\"https:\/\/developer.wordpress.org\/reference\/classes\/wp_term_query\/__construct\/\">Taxonomy Query Terms<\/a><br\/>\r\n<a href=\"https:\/\/flickity.metafizzy.co\/options.html\">Flickity Options<\/a>",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_5e6a74f7a0504",
+                "label": "Shortcode Parameters",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "75",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "message": "The <code>[andyp_grid_posts]<\/code> Shortcode has the following parameters:\r\n- <code>slug=\"taxonomy_latest\"<\/code> This is the slug created below to use in the shortcode.\r\n- <code>tax=\"articlecategory\"<\/code> The taxonomy to filter the query by.\r\n- <code>term=\"cat-pass\"<\/code> The term slug to use on the taxonomy to filter.\r\n\r\n<h3>Examples<\/h3>\r\n<code>[andyp_grid_posts slug=\"taxonomy_latest\"]<\/code><br\/>\r\n<code>[andyp_grid_posts slug=\"taxonomy_latest\" tax=\"articlecategory\" term=\"cat-pass\"]<\/code>",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_5e675f24c77a6",
+                "label": "Grid Shortcode",
+                "name": "grid_shortcode",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "collapsed": "field_5e675f5ec77a8",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_5e675f4cc77a7",
+                        "label": "Shortcode Slug",
+                        "name": "shortcode_slug",
+                        "type": "text",
+                        "instructions": "No spaces in slug.",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "20",
+                            "class": "",
+                            "id": ""
+                        },
+                        "hide_admin": 0,
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5e675f5ec77a8",
+                        "label": "Shortcode Title",
+                        "name": "shortcode_title",
+                        "type": "text",
+                        "instructions": "Used to label the grid",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "hide_admin": 0,
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5e67a891003dc",
+                        "label": "Viewport Cells",
+                        "name": "viewport_cells",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "10",
+                            "class": "",
+                            "id": ""
+                        },
+                        "hide_admin": 0,
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "min": "",
+                        "max": "",
+                        "step": ""
+                    },
+                    {
+                        "key": "field_5e67a8f941a8b",
+                        "label": "Viewport Vertical Grid",
+                        "name": "viewport_vertical_grid",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "10",
+                            "class": "",
+                            "id": ""
+                        },
+                        "hide_admin": 0,
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "min": "",
+                        "max": "",
+                        "step": ""
+                    },
+                    {
+                        "key": "field_5e6ba0cc0f854",
+                        "label": "Vertical Stacking",
+                        "name": "vertical_stacking",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "10",
+                            "class": "",
+                            "id": ""
+                        },
+                        "hide_admin": 0,
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "min": "",
+                        "max": "",
+                        "step": ""
+                    },
+                    {
+                        "key": "field_5e67ba186f891",
+                        "label": "Arguments",
+                        "name": "args",
+                        "type": "textarea",
+                        "instructions": "Array for the Query $args",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "hide_admin": 0,
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_5e6a6488f79d3",
+                        "label": "Flickity Arguments",
+                        "name": "flickity_args",
+                        "type": "textarea",
+                        "instructions": "Array for the HTML Flickity $args",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "hide_admin": 0,
+                        "default_value": "{ \"groupCells\": true, \"contain\": true }",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_5e6a8b731ead9",
+                        "label": "Flickity CSS",
+                        "name": "flickity_css",
+                        "type": "textarea",
+                        "instructions": "Custom CSS for this flickity instance.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "34",
+                            "class": "",
+                            "id": ""
+                        },
+                        "hide_admin": 0,
+                        "default_value": "",
+                        "placeholder": "",
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_5eaac247e2a8c",
+                        "label": "Cell Theme",
+                        "name": "flickity_cell_theme",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "30",
+                            "class": "",
+                            "id": ""
+                        },
+                        "hide_admin": 0,
+                        "choices": {
+                            "default": "default",
+                            "youtube": "youtube"
+                        },
+                        "default_value": [
+                            "default"
+                        ],
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "ui": 0,
+                        "return_format": "value",
+                        "ajax": 0,
+                        "placeholder": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "gridshortcodes"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

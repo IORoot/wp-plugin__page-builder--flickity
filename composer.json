@@ -1,0 +1,14 @@
+{
+    "name": "andrewpearson/andyp_metafizzy_flickity",
+    "authors": [
+        {
+            "name": "Andy Pearson",
+            "email": "andy@londonparkour.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src"
+        ]
+    }
+}

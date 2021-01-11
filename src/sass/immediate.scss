@@ -1,0 +1,10 @@
+//Hide cells by default at theme load. This will prevent shitty loading performance from displaying.
+// Make sure you add a .andyp-grid__cell { display:initial; } to display them!
+.andyp-grid__cell { 
+    display:none;
+
+    &-image.lazyloading {
+        background-size: 120px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 185 120' %3E%3Cg id='ldnpk' fill='rgb(224, 224, 224)' %3E%3Cpath d='M24,24 L24,96 L106,96 L60,24 L24,24 Z M78,24 L125,96 L161,96 L161,24 L78,24 Z' id='ldnpk' /%3E%3C/g%3E%3C/svg%3E");
+    } 
+}  
