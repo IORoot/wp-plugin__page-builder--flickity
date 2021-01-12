@@ -41,8 +41,6 @@ class flickity
 
         $this->render_results();
 
-        $this->enqueue_immediate_css();
-
         $this->register_css();
 
         $this->inline_css();
@@ -123,11 +121,8 @@ class flickity
 
         $out->set_options($this->organism);
 
-        ob_start();
 
             $output = $out->open_wrapper();
-
-            $output .= $out->title();
 
             $output .= $out->open_flickity_arguments();
 
@@ -158,9 +153,9 @@ class flickity
 
             $output .= $out->close_wrapper();
 
-            echo $output;
+            $output;
 
-        return ob_end_flush();
+        $this->output = $output;
     }
 
 
@@ -181,21 +176,11 @@ class flickity
 
 
 
-
-    private function enqueue_immediate_css()
-    {
-        // Load and enqueue now, before everything else.
-        wp_register_style( 'flickity_immediate_css', ANDYP_PAGEBUILDER_FLICKITY_PATH . 'src/sass/immediate.css' );
-        wp_enqueue_style( 'flickity_immediate_css' );
-    }
-
-
-
     private function register_css()
     {
         wp_register_style(  'flickity_css', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
         wp_register_script( 'flickity_js', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js' );
-        wp_register_style(  'flickity_inline_css', ANDYP_PAGEBUILDER_FLICKITY_PATH . 'src/sass/style.css' );
+        wp_register_style(  'flickity_inline_css', ANDYP_PAGEBUILDER_FLICKITY_URL . '/src/css/style.css' );
     }
 
 

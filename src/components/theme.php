@@ -34,9 +34,10 @@ class theme
     {
         if (empty($this->theme)){ return; }
 
-        preg_match_all('/\{\{(\S*?)\}\}/', $this->theme, $matches);
+        preg_match_all('/\{\{([\S|\s]*?)\}\}/', $this->theme, $matches);
         
         foreach ($matches[1] as $match) {
+
             $this->search_through_post($match);
             $this->search_through_meta($match);
             $this->search_through_extra($match);
@@ -87,11 +88,13 @@ class theme
 
     public function search_through_extra($match)
     {
+        $match_parts = explode(':', $match);
+
         $this->get_moustache_list();
 
         foreach ($this->moustache_functions as $moustache) {
 
-            if ($moustache != $match){ continue; }
+            if ($moustache != $match_parts[0]){ continue; }
 
             $instance = '\\andyp\\pagebuilder\\flickity\\components\\moustache\\'. $moustache;
 
@@ -99,6 +102,15 @@ class theme
             $obj->set_match($match);
             $obj->set_theme($this->theme);
             $obj->set_data($this->cell_data);
+
+            /**
+             * If there is a {{image_url:full}}
+             * send the 'full' to set_args()
+             */
+            if (!empty($match_parts[1])){
+                $obj->set_args($match_parts[1]);
+            }
+
             $obj->match();
             $this->theme = $obj->result();
         }
