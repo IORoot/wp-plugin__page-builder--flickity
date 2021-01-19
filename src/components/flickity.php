@@ -132,12 +132,10 @@ class flickity
                     
             // Loop the results array.
             foreach ($this->results as $cell) {
-                
-                $cell = $this->cast_theme($cell);
 
-                $output .= $out->open_cell($cell);
+                $output .= $out->open_cell();
 
-                $output .= $cell;
+                $output .= $this->theme($cell);
 
                 $output .= $out->close_cell();
 
@@ -160,7 +158,7 @@ class flickity
 
 
 
-    private function cast_theme($cell)
+    private function theme($cell)
     {
         $theme = new theme;
 

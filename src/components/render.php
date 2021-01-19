@@ -90,7 +90,7 @@ class render
         // add a wrapper around every X items.
         if ($this->is_vertical_stack_on()) {
             if ($col % $this->options["vertical_stack"] == 0) {
-                return '</div><div class="vertical-stack carousel-cell inline-block">';
+                return '</div><div class="vertical-stack carousel-cell '.$this->options['cell_classes'].'">';
             }
         }
     }

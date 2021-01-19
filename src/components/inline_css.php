@@ -34,31 +34,7 @@ class inline_css
 
     public function create()
     {
-
-        $this->cell_width();
-
-        $this->render_cell();
-
         $this->render_custom_css();
-
-    }
-
-    private function cell_width()
-    {
-        $this->organism['cell_width'] = 100 / $this->organism["viewport_cells"];
-    }
-
-
-    private function render_cell()
-    {
-        if (empty($this->organism["viewport_cells"])) { return; }
-
-        $this->css .= $this->slug . ' .carousel-cell { ';
-
-            $this->css .= 'width: '. $this->organism['cell_width'] . '%; ';
-
-        $this->css .= '}' . PHP_EOL;
-
     }
 
 
