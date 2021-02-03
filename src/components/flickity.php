@@ -220,6 +220,7 @@ class flickity
 
     private function cast_to_float($in)
     {
+        if (!array_key_exists($in, $this->organism)){ return; }
         $this->organism[$in] = (float) $this->organism[$in];
     }
 }

@@ -40,6 +40,6 @@ class inline_css
 
     private function render_custom_css()
     {
-        $css .= $this->organism["additional_css"];
+        $this->css = $this->organism["additional_css"];
     }
 }
