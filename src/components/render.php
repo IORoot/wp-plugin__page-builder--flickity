@@ -52,7 +52,7 @@ class render
     {
         // Are we going to stack the results vertically?
         if ($this->is_vertical_stack_on()) {
-            return '<div class="vertical-stack carousel-cell inline-block">';
+            return '<div class="vertical-stack carousel-cell inline-block '.$this->options['vertical_stack_classes'].'">';
         }
     }
 
@@ -64,7 +64,7 @@ class render
      */
     public function open_cell()
     {
-        return '<div class="sub-cell">';
+        return '<div class="sub-cell '.$this->options['cell_classes'].'">';
     }
 
     /**
@@ -90,7 +90,7 @@ class render
         // add a wrapper around every X items.
         if ($this->is_vertical_stack_on()) {
             if ($col % $this->options["vertical_stack"] == 0) {
-                return '</div><div class="vertical-stack carousel-cell '.$this->options['cell_classes'].'">';
+                return '</div><div class="vertical-stack carousel-cell '.$this->options['vertical_stack_classes'].'">';
             }
         }
     }
