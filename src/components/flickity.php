@@ -176,8 +176,11 @@ class flickity
 
     private function register_css()
     {
-        wp_register_style(  'flickity_css', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
-        wp_register_script( 'flickity_js', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js' );
+        // wp_register_script( 'flickity_js', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js' );
+        wp_register_script( 'flickity_js', ANDYP_PAGEBUILDER_FLICKITY_URL . '/src/js/flickity.min.js' );
+
+        // wp_register_style(  'flickity_css', 'https://unpkg.com/flickity@2/dist/flickity.min.css' ); 
+        wp_register_style(  'flickity_css', ANDYP_PAGEBUILDER_FLICKITY_URL . '/src/css/flickity.css' ); 
         wp_register_style(  'flickity_inline_css', ANDYP_PAGEBUILDER_FLICKITY_URL . '/src/css/style.css' );
     }
 
