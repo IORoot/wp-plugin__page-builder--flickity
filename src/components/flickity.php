@@ -122,38 +122,37 @@ class flickity
         $out->set_options($this->organism);
 
 
-            $output = $out->open_wrapper();
+            $output[] = $out->open_wrapper();
 
-            $output .= $out->open_flickity_arguments();
+            $output[] .= $out->open_flickity_arguments();
 
             $col = 1;
-
-            $output .= $out->open_vertical_stack();
                     
             // Loop the results array.
-            foreach ($this->results as $cell) {
+            foreach ($this->results as $loop_key => $loop_cell) {
 
-                $output .= $out->open_cell();
+                $output[] = $out->open_vertical_stack($loop_key);
 
-                $output .= $this->theme($cell);
+                $output[] = $out->open_cell();
 
-                $output .= $out->close_cell();
+                $output[] = $this->theme($loop_cell);
 
-                $output .= $out->close_and_open_next_vertical_stack($col);     
+                $output[] = $out->close_cell();
+
+                // $output[] = $out->close_and_open_next_vertical_stack($col);     
+
+                $output[] = $out->close_vertical_stack($loop_key);
 
                 $col++;
 
             }
 
-            $output .= $out->close_vertical_stack();
+            $output[] = $out->close_flickity_arguments();
 
-            $output .= $out->close_flickity_arguments();
+            $output[] = $out->close_wrapper();
 
-            $output .= $out->close_wrapper();
 
-            $output;
-
-        $this->output = $output;
+        $this->output = implode($output);
     }
 
 
