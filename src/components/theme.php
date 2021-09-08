@@ -107,8 +107,10 @@ class theme
              * If there is a {{image_url:full}}
              * send the 'full' to set_args()
              */
-            if ($match_parts[1] != '' || !empty($match_parts[1])){
-                $obj->set_args($match_parts[1]);
+            if (array_key_exists(1, $match_parts)) {
+                if ($match_parts[1] != '' || !empty($match_parts[1])) {
+                    $obj->set_args($match_parts[1]);
+                }
             }
 
             $obj->match();
