@@ -15,11 +15,20 @@
 ##  1. <a name='TableofContents'></a>Table of Contents
 
 
+
 * 1. [Table of Contents](#TableofContents)
 * 2. [About The Project](#AboutTheProject)
 	* 2.1. [Built With](#BuiltWith)
 	* 2.2. [Installation](#Installation)
 * 3. [Usage](#Usage)
+	* 3.1. [Flickity](#Flickity)
+	* 3.2. [WP_Query](#WP_Query)
+	* 3.3. [Grid](#Grid)
+	* 3.4. [Cells](#Cells)
+		* 3.4.1. [Template usage](#Templateusage)
+		* 3.4.2. [Moustaches](#Moustaches)
+		* 3.4.3. [Custom Moustaches](#CustomMoustaches)
+	* 3.5. [CSS](#CSS)
 * 4. [Customising](#Customising)
 * 5. [Troubleshooting](#Troubleshooting)
 * 6. [Contributing](#Contributing)
@@ -31,7 +40,9 @@
 
 ##  2. <a name='AboutTheProject'></a>About The Project
 
-ACF-Based panels to allow you to create shortcodes for flickity sliders.
+![https://github.com/IORoot/wp-plugin__page-builder--flickity/blob/master/files/docs/flickity-slider.png?raw=true](https://github.com/IORoot/wp-plugin__page-builder--flickity/blob/master/files/docs/flickity-slider.png?raw=true)
+
+ACF-Based panels to allow you build flickity sliders.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -71,7 +82,7 @@ The Flickity slider will now be available through the page-builder as an "organi
 
 The organism has five tabs to use:
 
-### Flickity
+###  3.1. <a name='Flickity'></a>Flickity
 
 1. Title. This is the instance 'slug' of the slider.
 1. Classes. Any class names you wish to add to the containing wrapper of the flickity slider.
@@ -84,7 +95,7 @@ For instance:
 ![Flickity Tab](https://github.com/IORoot/wp-plugin__page-builder--flickity/blob/master/files/docs/flickity.png?raw=true)
 
 
-### WP_Query
+###  3.2. <a name='WP_Query'></a>WP_Query
 
 1. WP_Query. This is a PHP array of options for the wordpress WP_Query. Everything is documented here: [WP_Query](https://developer.wordpress.org/reference/classes/wp_query/)
 
@@ -107,7 +118,7 @@ Example:
 
 ![WP_Query Tab](https://github.com/IORoot/wp-plugin__page-builder--flickity/blob/master/files/docs/wp_query.png?raw=true)
 
-### Grid
+###  3.3. <a name='Grid'></a>Grid
 
 1. Vertical Stack. You can have multiple items stacked on top of each other in a column if you prefer. Enter the number of items here.
 1. Vertical-Stack Classes. The class names to give the entire column wrapper.
@@ -115,7 +126,7 @@ Example:
 
 ![Grid Tab](https://github.com/IORoot/wp-plugin__page-builder--flickity/blob/master/files/docs/grid.png?raw=true)
 
-### Cells
+###  3.4. <a name='Cells'></a>Cells
 
 1. Template. This is how to render each item. This is quite powerful since you describe the layout of each item with the dynamic fields inserted using moustache-bracket formatting.
 Example:
@@ -141,10 +152,10 @@ And there are many more.
 
 There is a help tab to describe the functionality available.
 
-#### Template usage
+####  3.4.1. <a name='Templateusage'></a>Template usage
 The template is the HTML layout of each cell combined with the use of `{{moustache}}` code.
 
-#### Moustaches
+####  3.4.2. <a name='Moustaches'></a>Moustaches
 The moustaches will do one of three things:
 
 Substitute a POST field with its value. So, `{{post_content}}` will be replaced with the actual post content.
@@ -152,7 +163,7 @@ Substitute a META field for its value. The meta fields will allow you to insert 
 
 Lastly, there are a number of custom moustaches that do various custom functions. Some are specific to LondonParkour / Parkourpulse.
 
-#### Custom Moustaches
+####  3.4.3. <a name='CustomMoustaches'></a>Custom Moustaches
 
 `{{admin}}`.
 `{{article_media_type}}`.
@@ -171,7 +182,7 @@ Lastly, there are a number of custom moustaches that do various custom functions
 
 ![Cells Tab](https://github.com/IORoot/wp-plugin__page-builder--flickity/blob/master/files/docs/cells.png?raw=true)
 
-### CSS
+###  3.5. <a name='CSS'></a>CSS
 
 1. Inline additional CSS. Add a `<style>` tag above the flickity instance with these rules in it.
 
