@@ -256,4 +256,8 @@ Author Link: [https://github.com/IORoot](https://github.com/IORoot)
 
 ##  9. <a name='Changelog'></a>Changelog
 
-v1.0.0 - Initial Release
+- v1.1.0 - Admin features.
+
+Added the `{{admin}}...{{/admin}}` moustache to only display cell content if you're an admin.
+
+- v1.0.0 - Initial Release
